@@ -17,12 +17,12 @@ void remove();
 
 int main(int argc, char const* argv[])
 {
-  printf("Hello world\n");
-
   if (argc < 2) {
     usage();
-    exit(1);
+    exit(0);
   }
+
+  printf("tsk - task management system\n");
 
   if (strncmp(argv[1], "ls", 2) == 0) {
     show_all();
@@ -41,6 +41,11 @@ int main(int argc, char const* argv[])
 
 void usage()
 {
+  std::string use = "\
+    usage: tsk [option] \n \
+    option: add, ls, rm";
+
+  std::cout << use << std::endl;
 }
 
 void show_all()
